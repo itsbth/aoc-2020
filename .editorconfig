@@ -1,0 +1,7 @@
+[*.{py}]
+indent_style = space
+indent_width = 4
+
+[*.{rb,raku}]
+indent_style = space
+indent_width = 4
