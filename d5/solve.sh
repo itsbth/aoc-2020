@@ -8,4 +8,5 @@ max=$(echo "${ids}" | tail -n1)
 
 echo "part 1: ${max}"
 echo "part 2:"
-diff <(seq "${min}" "${max}") <(echo "${ids}")
+# diff <(seq "${min}" "${max}") <(echo "${ids}") || true
+comm -23 <(seq "${min}" "${max}") <(echo "${ids}")
