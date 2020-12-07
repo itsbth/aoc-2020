@@ -33,11 +33,6 @@ class BagRules-Actions {
 
 my %rules = BagRules.parse('input'.IO.slurp.trim, actions => BagRules-Actions.new).made;
 (my %can-be-contained-in).push: %rules.kv.map({ $^a => $^b.keys }).Map.invert;
- for %rules.kv -> $k, $v {
-         for $v.kv -> $b, $_ {
-                 %can-be-contained-in.push: ($b => $k);
-         }
- }
 
  my $open = SetHash.new('shiny gold');
  my $closed = SetHash.new();
